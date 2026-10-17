@@ -94,6 +94,8 @@ Rule-based metrics (on these 20 self-built cases):
 
 **Note**: perfect scores only show that the rules are correct on the self-built cases, not that they are accurate on real documents. Citation accuracy, hallucination rate, format compliance and role confusion cannot go wrong in the rule-only pipeline; they are guard metrics, mainly for catching problems introduced by LLM judgment.
 
+**Scope**: `eval.py` only scores the judgments for BASE paragraphs. Content added in REF has no labels and is not part of the scoring.
+
 LLM judgment evaluation (`python eval_llm.py`, 17 paragraphs, about 17 API calls):
 - `fuzzy`: 4 cases, 4 match expectations, 0 fallbacks;
 - `same`: 13 cases, 13 match expectations, 0 fallbacks.
