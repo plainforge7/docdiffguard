@@ -117,6 +117,7 @@ This is the only check this project has run on real documents, and it was run on
   - P031: its content is fully contained in a merged paragraph in B2; the rules label it `fuzzy`, but it should be `same`. Both cases come from paragraph segmentation differences, which one-to-one best matching cannot handle.
 - **LLM judgment**: four `fuzzy` paragraphs were sent to the LLM; all calls succeeded (0 fallbacks). In 3 of them, the `evidence` could not be found verbatim in BASE, so the evidence check discarded it. P031 was labeled `modified`, which disagrees with the draft label, for the same segmentation reason.
 - **Source check** (`check_additions.py`): 5 sentences in B2 come from B0 and are not in B1; another sentence is in neither B0 nor B1 and needs manual review.
+- **Resurrection check** (`check_resurrection.py`): 8 fragments that were deliberately removed from B0 to B1 all reappear in B2. The content is not published in this document.
 
 ## Failure modes and known limitations
 
@@ -153,6 +154,7 @@ docdiffguard/
 ├── models.py            Pydantic structured results (AlignmentResult, JudgeVerdict)
 ├── report.py            Produces the change list
 ├── check_additions.py   Lists sentences in the target document that are not found in any source
+├── check_resurrection.py Checks whether content deleted between earlier and later versions reappears in the target
 ├── judge.py             LLM judgment (with rule fallback) and evidence checks
 ├── eval.py              Evaluation script
 ├── eval_llm.py          Evaluation script for LLM judgment

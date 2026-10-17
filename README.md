@@ -117,6 +117,7 @@ LLM 判断的评测（`python eval_llm.py`，共 17 个段落，约 17 次 API �
   - P031：内容完整包含在 B2 的合并段落中，规则判为 `fuzzy`，实际应为 `same`。这两例都是段落切分不一致导致的，一对一的最佳匹配对此无效。
 - **LLM 判断**：对 4 个 `fuzzy` 段落调用，全部成功（降级 0 次），3 段的 `evidence` 未能逐字在 BASE 中找到，被证据检查丢弃。P031 被判为 `modified`，与草稿标签不一致，原因同上。
 - **来源检查**（`check_additions.py`）：B2 中有 5 句原文来自 B0，不在 B1 中；另有 1 句在 B0 和 B1 中都找不到，需要人工确认。
+- **复活检测**（`check_resurrection.py`）：B0 到 B1 中被有意删除的 8 个片段，全部在 B2 中重新出现。具体内容不在本文档中公开。
 
 ## 失败模式与已知限制
 
@@ -153,6 +154,7 @@ docdiffguard/
 ├── models.py         Pydantic 结构化结果（AlignmentResult、JudgeVerdict）
 ├── report.py         生成修改清单
 ├── check_additions.py 列出目标文档中在所有来源里都找不到原文的句子
+├── check_resurrection.py 检查目标文档是否重新出现了前后版本之间被删除的内容
 ├── judge.py          LLM 判断（含规则降级）与证据检查
 ├── eval.py           评测脚本
 ├── eval_llm.py       LLM 判断的评测脚本
