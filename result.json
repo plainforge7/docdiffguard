@@ -1,0 +1,35 @@
+[
+  {
+    "base_id": "P001",
+    "base_text": "人的气质我们总是一眼就从人的外貌上看出，但是除了外貌还有其他更重要的东西，甚至灾难都会进入一个人的身体里。",
+    "ref_id": "R001",
+    "ref_text": "人的气质我们总是一眼就从人的外貌上看出，但是除了外貌还有其他更重要的东西。",
+    "diff_type": "fuzzy",
+    "action": "review",
+    "reason": "相似度 0.822",
+    "confidence": 0.8222222222222222,
+    "source": "samples/base_test.docx"
+  },
+  {
+    "base_id": "P002",
+    "base_text": "一个人的气质，从来不只来自外貌。你的姿态、语言、反应方式、生活习惯，以及你如何理解每天发生的事情，都会组成别人对你的整体感受。当一个人长期陷在艰难里，那些艰难也可能慢慢进入他的表达和状态。",
+    "ref_id": null,
+    "ref_text": null,
+    "diff_type": "missing",
+    "action": "add",
+    "reason": "相似度 0.122",
+    "confidence": 0.12213740458015267,
+    "source": "samples/base_test.docx"
+  },
+  {
+    "base_id": "P003",
+    "base_text": "一个人的气质，从来不只来自外貌。你的姿态、语言、反应方式、生活习惯，以及你如何理解每天发生的事情，都会组成别人对你的整体感受。当一个人长期陷在艰难里，那些灾难也可能慢慢进入他的表达和状态，沉淀成别人读得懂、却说不出口的东西。",
+    "ref_id": null,
+    "ref_text": null,
+    "diff_type": "missing",
+    "action": "add",
+    "reason": "相似度 0.174",
+    "confidence": 0.174496644295302,
+    "source": "samples/base_test.docx"
+  }
+]
